@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import randomColor from "randomcolor";
-import "./ColorGenerator.css";
 import Color from './Color.js';
 export default class ColorGenerator extends Component {
   constructor(props) {
@@ -12,9 +11,9 @@ export default class ColorGenerator extends Component {
             this.addColor=this.addColor.bind(this)
   }
   addColor() {
-          // this.state.new_color=randomColor();
-          let random_hex_color = (Math.random() * 0xfffff * 1000000).toString(16);
-          this.state.new_color='#' + random_hex_color.slice(0, 6);
+          this.state.new_color=randomColor();
+          // let random_hex_color = (Math.random() * 0xfffff * 1000000).toString(16);
+          // this.state.new_color='#' + random_hex_color.slice(0, 6);
           this.setState({color:[...this.state.color,this.state.new_color],new_color:''})
 
   }
