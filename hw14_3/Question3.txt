@@ -1,0 +1,84 @@
+1)npm vs npx
+تعریف npm: یک ابزاری برای نصب پکیج ها  Package manager در Nodejs  است که هدفش خودکار کردن روند کارکرد وابستگی‌ها (dependency) ی یک پروژه و مدیریت پکیح‌های آن است راهی است برای توسعه‌دهندگان تا بتوانند هم پکیج محلی(locally) و هم پکیج همگانی(globally) را نصب و استفاده کنند.
+npm یک ابزار (CLI ( command-line-interface است، که به شما کمک می‌کند بسته‌هایی را که می‌خواهید ، نصب کنید و ورژن و dependency های آن‌را مدیریت کنید.صدها هزار کتابخانه و برنامه نودجی‌اس، در npmوجود دارد، و هر روزه، تعداد زیاد دیگری نیز به آن اضافه می‌شود.
+Npm به خودی خود هیچ پکیجی را اجرا نمی‌کند، اگر می‌خواهید با استفاده از npm پکیجی را اجرا کنید، باید آن پکیج را در فایل package.json خود مشخص کنید.
+ن	پکیج‌های محلی(locally) در دایرکتوری ./node_modules/.bin/ ایجاد می‌شوند.
+•	پکیج‌های همگانی(globally) در دایرکتوری bin/  ایجاد می‌شوند ـ (به طور‌مثال در لینوکس در مسیر /user/local/bin  و در ویندوز در مسیر %AppData%/npm قرار دارند.)
+برای اجرای یک پکیج با npm باید در مسیر محلی(local) آن‌را تایپ کنید:
+$ ./node_modules/.bin/your-package
+یا می‌توانید با اضافه کردن بسته‌ی محلی نصب شده به package.json در بخشscript آن‌را اجرا کنید، مثل این:
+{
+ "name": "your-application",
+  "version": "1.0.0",
+  "scripts": {
+    "your-package": "your-package"
+}
+}
+سپس می‌توانید اسکریپت را با استفاده از دستور npm run  اجرا کنید.
+
+
+تعریف npx: یک ابزاری برای اجرا کردن پکیج هاPackage runnerهای Nodejs و از نسخه‌ی npm 5.2 به بعد در اختیار کابران این پکیج منیجر قرار گرفته است.
+Npx همچنین یک ابزار CLI هم هست،‌که هدف آن نصب و مدیریت آسانdependency های موجود در ریجیستری npm است. و اکنون، اجرای هر نوع پکیج مبتنی بر Node.js که معمولاً با npm نصب می‌کردید، بسیار آسان‌تر شده است.
+نتیجه:
+اگه از npm create-react-app my-app استفاده کنی، local package create-react-app از روی سیستمت اجرا میشه یعنی برای اجرا شدن این پکیج محلی، قبل اینکه این پروژه ری‌اکت رو با npm نصب کنی، باید قبلا یدور بصورت globally روی سیستمت با دستور npm install -g create-react-app نصبش کنی و بعدش بتونی پروژه های ری‌اکت رو روی سیستمت نصب کنی. و برای اجرای یک پکیج چه local چه global با npm، باید اون پکیج رو تو فایل package.json مشخص کنی.
+ولی اگه از npx create-react-app my-app استفاده کنی و قبلا create-react-app رو بصورت globally روی سیستمت نصب نکرده باشی، با این دستور create-react-app روی برنامت دانلود میشه ولی بصورت globally نصب نمیشه. این برای زمان هایی که نمی‌خواهیم همه‌ی پکیج‌ها رو روی سیستم نصب کنیم و فقط پکیج‌های موردنیازمون رو تو برنامه داشته باشیم و اجرا کنیم خیلی خوبه. برای اجرای پکیج‌های local و پکیج هایی که قبلا نصب نکردیم خیلی راحت میتونیم با دستور npx اجرا کنیم
+https://roocket.ir/articles/npm-vs-npx-whats-the-difference
+https://roocket.ir/articles/yes-its-npx-not-npm-the-difference-explained
+https://virgool.io/@happyycodee/comment/nitwv8bj4dajqqr
+
+
+
+
+
+
+
+
+
+2)state and component in react:
+State in react: is a plain JavaScript object used by React to represent an information about the component’s current situation.
+It’s managed in the component (just like any variable declared in a function).
+Component in react: Components are like functions that return HTML elements. Components are independent and reusable bits of code. They serve the same purpose as JavaScript functions, but work in isolation and return HTML.
+Components come in two types, Class components and Function components, in this tutorial we will concentrate on Function components.
+Function and Class Components
+The simplest way to define a component is to write a JavaScript function:
+
+Function function_name(n){
+   return <h1>{n.name}<h1>
+}
+
+This function is a valid React component because it accepts a single “props” (which stands for properties) object argument with data and returns a React element. We call such components “function components” because they are literally JavaScript functions.
+________________________________________________________________________________
+You can also use an ES6 class to define a component:
+
+class Welcome extends React.Component {
+render() {
+    return <h1>Hello, {this.props.name}</h1>;
+  }
+}
+
+The above two components are equivalent from React’s point of view.
+https://medium.com/edonec/state-in-react-an-overview-a182675cee2c#:~:text=State%20is%20a%20plain%20JavaScript%20object%20used%20by%20React%20to,variable%20declared%20in%20a%20function).
+https://www.w3schools.com/react/react_components.asp
+https://reactjs.org/docs/components-and-props.html
+
+3)  re_render component:
+As we know React JS is an open source JavaScript library that is used for building user interfaces specifically for single-page applications. It is also known for providing fast user experience by only updating the parts of the UI that have changed. Rendering components is not in user hands, it is a part of React Component Lifecycle and is called by React at various app stages, generally when the React Component is first instantiated. A second or subsequent render to update the state is called as re-rendering. React components automatically re-render whenever there is a change in their state or props.
+Prerequisites: Introduction to React JS, React JS | Lifecyle of Components
+A simple update of the state, from anywhere in the code, causes all the User Interface (UI) elements to be re-rendered automatically. However, there may be cases where the render() method depends on some other data. Re-render can be caused due to any of the three reasons listed:
+1.	Update in state: The state change can be from a prop or setState change to update a variable(say). The component gets the updated state and React re-renders the component to reflect the change on the app.
+
+2.	Update in prop: Likewise the change in prop leads to state change and state change leads to re-rendering of the component by React.
+
+
+3.	Re-rendering of parent component: Whenever the components render function is called, all its subsequent child components will re-render, regardless of whether their props have changed or not.
+
+ Unnecessary re-renders affect the app performance and cause loss of users’ battery which surely no user would want. Let’s see in detail why components get re-rendered and how to prevent unwanted re-rendering to optimize app components.
+
+https://www.geeksforgeeks.org/re-rendering-components-in-reactjs/#:~:text=A%20second%20or%20subsequent%20render,in%20their%20state%20or%20props.&text=A%20simple%20update%20of%20the,to%20be%20re%2Drendered%20automatically.
+
+
+
+
+
+
+
