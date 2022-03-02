@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import './Counter.css';
 import Buttons from './Buttons.js';
 export default class Counter extends Component {
   constructor(props) {
