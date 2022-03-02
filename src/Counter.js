@@ -6,7 +6,6 @@ export default class Counter extends Component {
             this.state = {
                       counter:0,
             }
-            // this.actions=['increase','decrease']
             this.increase=this.increase.bind(this)
             this.decrease=this.decrease.bind(this)
   }
